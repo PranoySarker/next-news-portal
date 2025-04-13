@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import {
@@ -12,8 +13,10 @@ import { Switch } from "../ui/switch";
 import { Button } from "../ui/button";
 
 import { AiOutlineMenu } from "react-icons/ai";
+import { usePathname } from "next/navigation";
 
 const NavBar = () => {
+  const pathname = usePathname();
   return (
     <header className="py-4 shadow-md">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -26,7 +29,12 @@ const NavBar = () => {
         <NavigationMenu className="hidden lg:flex">
           <NavigationMenuList>
             <NavigationMenuItem className="flex items-center">
-              <NavigationMenuLink href="/news" className="hover:text-red-500">
+              <NavigationMenuLink
+                href="/news"
+                className={`link ${
+                  pathname === "/news" ? "text-red-500" : ""
+                } hover:text-red-500`}
+              >
                 News
               </NavigationMenuLink>
             </NavigationMenuItem>
@@ -50,14 +58,21 @@ const NavBar = () => {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem className="flex items-center">
-              <NavigationMenuLink href="/about" className="hover:text-red-500">
+              <NavigationMenuLink
+                href="/about"
+                className={`link ${
+                  pathname === "/about" ? "text-red-500" : ""
+                } hover:text-red-500`}
+              >
                 About
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem className="flex items-center">
               <NavigationMenuLink
                 href="/contact"
-                className="hover:text-red-500"
+                className={`link ${
+                  pathname === "/contact" ? "text-red-500" : ""
+                } hover:text-red-500`}
               >
                 Contact
               </NavigationMenuLink>

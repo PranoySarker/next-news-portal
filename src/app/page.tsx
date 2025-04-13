@@ -1,3 +1,9 @@
+import Banner from "@/components/shared/Banner";
+
 export default function Home() {
-  return <div>Hello Nextjs</div>;
+  return (
+    <div className="py-12">
+      <Banner />
+    </div>
+  );
 }
