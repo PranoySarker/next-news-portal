@@ -11,13 +11,19 @@ export const fetchNews = async (category: string, search: string) => {
     }
 
     const response = await fetch(url);
-
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
 
     const data = await response.json();
-    return data.results;
+
+    // Ensure it's an array even if null
+    if (data?.results && Array.isArray(data.results)) {
+      console.log("Fetched news data:", data.results); // Log the fetched data
+      return data.results;
+    }
+
+    return [];
   } catch (error) {
     console.error("Error fetching news:", error);
     return [];
