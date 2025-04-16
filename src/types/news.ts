@@ -1,4 +1,4 @@
-export interface NewsArticle {
+export interface NewsItem {
   article_id: string;
   title: string;
   link: string;
@@ -24,4 +24,8 @@ export interface NewsArticle {
   ai_region?: string;
   ai_org?: string;
   duplicate: boolean;
+}
+
+export interface NewsCardProps {
+  item: NewsItem;
 }
