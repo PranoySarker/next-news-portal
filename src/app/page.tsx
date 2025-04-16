@@ -1,5 +1,6 @@
 import Banner from "@/components/shared/Banner";
 import NewsCard from "@/components/shared/NewsCard";
+import NewsLetter from "@/components/shared/NewsLetter";
 import { NewsItem } from "@/types/news";
 
 const Home = async () => {
@@ -23,6 +24,8 @@ const Home = async () => {
           ))}
         </div>
       </div>
+
+      <NewsLetter />
     </div>
   );
 };
