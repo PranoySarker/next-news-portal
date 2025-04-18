@@ -34,7 +34,7 @@ const NewsList = () => {
     <div>
       <div className="flex flex-col md:flex-row justify-between items-center mb-4">
         <SearchBar onSearch={setSearch} />
-        <CategoryFilter />
+        <CategoryFilter onCategoryChange={setCategory} />
       </div>
 
       {/* News list cards */}
